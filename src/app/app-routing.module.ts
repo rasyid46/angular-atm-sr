@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-
+import {UserComponent } from './user/user.component';
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
+  { path: 'user', component: UserComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
