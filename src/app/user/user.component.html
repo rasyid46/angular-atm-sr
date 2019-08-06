@@ -1,3 +1,18 @@
 <p>
-  user works!
+  user works! {{ title }}! 
 </p>
+ 
+
+<ul *ngFor = "let data of httpdata">
+  <li>Name : {{data.name}} Address: {{data.address.city}}
+    <button (click)="detail_user(data.id)">Get Detail</button>
+
+  </li>
+</ul>
+
+<button (click)="get_products()">GET /Todods</button>
+ 
+<li *ngFor="let product of products" >
+  -- user ID : {{product.userId}}
+  -- Title : {{product.title}} 
+</li>
