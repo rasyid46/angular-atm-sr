@@ -8,6 +8,10 @@ import {Router} from "@angular/router";
 })
 export class UserComponent implements OnInit {
 
+  title = 'sule';
+ displaydata(data) {this.httpdata = data;}
+  products: any; 
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -19,16 +23,13 @@ export class UserComponent implements OnInit {
     this.displaydata(data)
     );
  }
- title = 'sule';
- displaydata(data) {this.httpdata = data;}
- private products  = []; 
+ 
 
 
  get_products(){
   this.http.get("https://jsonplaceholder.typicode.com/todos")
-    .subscribe((res)=>{
-      console.log(res);
-      this.products = res;
+    .subscribe( (res)=>{
+     this.products = res
   });
 }
 
@@ -36,4 +37,6 @@ detail_user(id){
 
   console.log(id);
   
+}
+
 }
