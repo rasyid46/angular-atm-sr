@@ -10,11 +10,16 @@ import {loginuser} from "../model/loginuser";
 export class LoginComponent implements OnInit {
 
   loginuser : loginuser[]= []; 
-
+  errorrespon = false;
+  descriptions = "";
+  coderes = 404;
   constructor(
     private http: HttpClient,
     private UserService: UserService
-  ) { }
+  ) { 
+
+
+  }
 
   ngOnInit() {
   }
@@ -32,10 +37,13 @@ export class LoginComponent implements OnInit {
     this.UserService.getLogin(data)
      .subscribe(  
       (res:any)=>{
-        console.log('zzzzzzzz'+res.data);
         this.loginuser = res.data;
-        console.log(res.data.code);
+        this.errorrespon = false;
+        this.coderes = res.code;
+      
       }, (error) =>{
+        this.errorrespon = true;
+        this.descriptions = error.error.descriptions;
         console.log(error.error.code);
       });
       

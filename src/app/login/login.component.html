@@ -6,11 +6,17 @@
   <input type = "submit" value = "submit">
 </form>
 
-<li *ngFor="let product of todo" >
-  -- user ID : {{product.userId}}
-  -- Title : {{product.title}} 
-</li>
+ 
+<div class="alert alert-success" role="alert" *ngIf="!errorrespon && coderes==200">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, first_name : {{loginuser.first_name}}
+    -- last_name : {{loginuser.last_name}}</p>
+  <hr>
+  <p class="mb-0">email : {{loginuser.email}}</p>
+</div>
 
--- email : {{loginuser.email}}
--- first_name : {{loginuser.first_name}}
--- last_name : {{loginuser.last_name}}
+ 
+
+<div class="alert alert-danger" role="alert"  *ngIf="errorrespon">
+  {{descriptions}}
+</div>
