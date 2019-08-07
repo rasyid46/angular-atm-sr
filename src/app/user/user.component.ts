@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Router} from "@angular/router";
+import {UserService} from "../user.service";
+import {user} from "../model/user";
+import {todo} from "../model/todo";
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -9,34 +10,31 @@ import {Router} from "@angular/router";
 export class UserComponent implements OnInit {
 
   title = 'sule';
- displaydata(data) {this.httpdata = data;}
   products: any; 
+  user: user[] = [];
+  todo : todo[]= []; 
 
   constructor(
-    private http: HttpClient,
-    private router: Router
+    private UserService: UserService
     ) { }
-  httpdata;
+
   ngOnInit() {
-    this.http.get("http://jsonplaceholder.typicode.com/users").
-    subscribe((data) => 
-    this.displaydata(data)
-    );
- }
- 
+    this.getUser();
+  }
+
+  getUser(): void {
+    this.UserService.getUsers()
+    .subscribe(user => this.user = user);
+  }
 
 
- get_products(){
-  this.http.get("https://jsonplaceholder.typicode.com/todos")
-    .subscribe( (res)=>{
-     this.products = res
-  });
-}
+  get_products(){
+    this.UserService.getTodo()
+     .subscribe(todo =>this.todo = todo);
+  }
 
-detail_user(id){
-
-  console.log(id);
-  
-}
+  detail_user(id){
+    console.log(id);
+  }
 
 }

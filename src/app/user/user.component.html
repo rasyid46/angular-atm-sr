@@ -3,7 +3,7 @@
 </p>
  
 
-<ul *ngFor = "let data of httpdata">
+<ul *ngFor = "let data of user">
   <li>Name : {{data.name}} Address: {{data.address.city}}
     <!-- <button (click)="detail_user(data.id)">Get Detail</button> -->
 
@@ -12,7 +12,7 @@
 
 <button (click)="get_products()">GET /Todods</button>
  
-<li *ngFor="let product of products" >
+<li *ngFor="let product of todo" >
   -- user ID : {{product.userId}}
   -- Title : {{product.title}} 
 </li>
