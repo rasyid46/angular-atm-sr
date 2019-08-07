@@ -3,6 +3,6 @@ export class loginuser {
     aging_logging: string;
     created_at: string;
     email: string;
-    first_name: string;
+    password: string;
     last_name: string;
   }
