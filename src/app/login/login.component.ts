@@ -32,11 +32,13 @@ export class LoginComponent implements OnInit {
     this.UserService.getLogin(data)
      .subscribe(  
       (res:any)=>{
+        console.log('zzzzzzzz'+res.data);
         this.loginuser = res.data;
-      },(error) => {
-          alert(1);
-      } 
-      );
+        console.log(res.data.code);
+      }, (error) =>{
+        console.log(error.error.code);
+      });
+      
  }
 
 

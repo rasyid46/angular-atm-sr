@@ -35,9 +35,14 @@ export class UserService {
 
   getLogin (loginuser: loginuser): Observable<loginuser> {
     return this.http.post<loginuser>("https://afternoon-lake-33785.herokuapp.com/api/eks/login", loginuser).pipe(
-      tap((data: loginuser) => this.log(`added hero w/ `)),
-      catchError(this.handleError<loginuser>('addHero'))
-    );
+      tap(
+        (res:any)=>{
+            console.log(res.data);
+          },(error)=>{
+              console.log(error.error);
+            }
+      )
+      );
   }
 
     /** Log a HeroService message with the MessageService */
