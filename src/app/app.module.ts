@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ChildComponent } from './child/child.component';
-import { StockStatusComponentComponent } from './stock-status-component/stock-status-component.component'; 
+import { StockStatusComponent } from './stock-status/stock-status.component';
 
 //form 
 
@@ -27,7 +27,7 @@ import { StockStatusComponentComponent } from './stock-status-component/stock-st
     UserComponent,
     LoginComponent,
     ChildComponent,
-    StockStatusComponentComponent
+    StockStatusComponent
   ],
   imports: [
     BrowserModule,
