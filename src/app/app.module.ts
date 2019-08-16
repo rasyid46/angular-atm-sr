@@ -12,7 +12,9 @@ import { UserComponent } from './user/user.component'; // <-- NgModel lives here
   
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component'; 
+import { LoginComponent } from './login/login.component';
+import { ChildComponent } from './child/child.component';
+import { StockStatusComponentComponent } from './stock-status-component/stock-status-component.component'; 
 
 //form 
 
@@ -23,7 +25,9 @@ import { LoginComponent } from './login/login.component';
     HeroDetailComponent,
     DashboardComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    ChildComponent,
+    StockStatusComponentComponent
   ],
   imports: [
     BrowserModule,

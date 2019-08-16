@@ -1,22 +1,54 @@
 <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
-  <input type = "text" name = "email" placeholder = "email" ngModel>
+  <input type = "text" name = "email" placeholder = "email" ngModel class="form-control">
   <br/>
-  <input type = "password" name = "password" placeholder = "password" ngModel>
+  <input type = "password" name = "password" placeholder = "password" ngModel class="form-control">
   <br/>
   <input type = "submit" value = "submit">
 </form>
 
  
-<div class="alert alert-success" role="alert" *ngIf="!errorrespon && coderes==200">
-  <h4 class="alert-heading">Well done!</h4>
-  <p>Aww yeah, first_name : {{loginuser.first_name}}
-    -- last_name : {{loginuser.last_name}}</p>
-  <hr>
-  <p class="mb-0">email : {{loginuser.email}}</p>
-</div>
+
+ 
 
  
 
 <div class="alert alert-danger" role="alert"  *ngIf="errorrespon">
   {{descriptions}}
 </div>
+
+
+<span *ngIf = "!errorrespon && coderes==200;then login else belumlogin"></span>
+<ng-template #login>
+  <div class="alert alert-success {{show}} " role="alert">
+      <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, first_name : {{loginuser.first_name}}
+      -- last_name : {{loginuser.last_name}}</p>
+    <hr>
+    <p class="mb-0">email : {{loginuser.email}}</p>
+  </div>
+</ng-template>
+<ng-template #belumlogin>
+  llllllllll
+</ng-template>
+
+
+<div> Months :
+  <select (change) = "changemonths($event)" name = "month">
+     <option *ngFor = "let i of months">{{i}}</option>
+  </select>
+</div>
+<br/>
+<div>
+  <span *ngIf = "isavailable;then condition1 else condition2">Condition is validzzzzzzzzzz.</span>
+  <ng-template #condition1>Condition is valid from template condition1</ng-template>
+  <ng-template #condition2>Condition is invalid from template condition2</ng-template>
+</div>
+<button (click) = "myClickFunction($event)">Click Me</button>
+
+
+ 
+
+  

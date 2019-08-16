@@ -5,11 +5,13 @@ import { HeroesComponent }      from './heroes/heroes.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import {UserComponent } from './user/user.component';
 import {LoginComponent} from './login/login.component';
+import { ChildComponent } from './child/child.component'; 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'user', component: UserComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'child', component: ChildComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
