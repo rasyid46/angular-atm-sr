@@ -7,18 +7,19 @@ import {Employee} from '../model/employee';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    this.today =new Date();
 
+   }
+
+  todaydate = new Date();
 
   private employee: Employee[] = [
     new Employee(1,'Andri','2018-01-02','2000'),
     new Employee(2,'zz','2018-01-02','2000'),
   ];
 
-  ngOnInit(){
-    this.employee = this.getEmployee();
-
-  }
+ 
   getEmployee() {
     return this.employee.slice();
   }
@@ -29,7 +30,22 @@ export class EmployeeComponent implements OnInit {
     console.log(employeeID,employeeName,employeeDob,employeeSalary);
   }
 
+  deleteEmpp(id:number){
+  
 
+    let updatedEmp = [];
+    for (let el of this.employee) {
+
+        if (el.id !== id) {
+          console.log(id);
+          updatedEmp.push(el);
+        }
+    }
+    this.employee = updatedEmp;
+  }
+  editEmpp(id){
+    console.log(id);
+  }
 
 
 }
