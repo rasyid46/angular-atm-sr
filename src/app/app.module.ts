@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ChildComponent } from './child/child.component';
 import { StockStatusComponent } from './stock-status/stock-status.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { NewEmployeeComponent } from './new-employee/new-employee.component';
 
 //form 
 
@@ -27,7 +29,9 @@ import { StockStatusComponent } from './stock-status/stock-status.component';
     UserComponent,
     LoginComponent,
     ChildComponent,
-    StockStatusComponent
+    StockStatusComponent,
+    EmployeeComponent,
+    NewEmployeeComponent
   ],
   imports: [
     BrowserModule,

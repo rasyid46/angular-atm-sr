@@ -30,12 +30,13 @@ export class AppComponent {
   }
 
   productToUpdate: any;
-changeStockValue(p) {
-    this.productToUpdate = this.products.find(this.findProducts, [p.id]);
-    this.productToUpdate.stock = this.productToUpdate.stock + p.updatdstockvalue;
-}
-findProducts(p) {
-    return p.id === this[0];
-}
+  changeStockValue(p) {
+      this.productToUpdate = this.products.find(this.findProducts, [p.id]);
+      this.productToUpdate.stock = this.productToUpdate.stock + p.updatdstockvalue;
+  }
+  
+  findProducts(p) {
+      return p.id === this[0];
+  }
 
 }
