@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
   private products  = []; 
   onClickSubmit(data) {
-    console.log("Entered Email id : " + data.email);
+    console.log("Entered Email id : " + data);
     // this.http.post("https://afternoon-lake-33785.herokuapp.com/api/eks/login", data )
     // .subscribe(
     //   (res:any)=>{

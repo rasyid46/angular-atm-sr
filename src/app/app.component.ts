@@ -13,6 +13,8 @@ export class AppComponent {
     console.log(count);
   }
 
+  id= 1;
+
   products = [];
    
 
