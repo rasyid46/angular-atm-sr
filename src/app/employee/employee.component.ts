@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
 import {Employee} from '../model/employee';
 @Component({
   selector: 'app-employee',
@@ -10,7 +12,13 @@ export class EmployeeComponent {
     new Employee(1,'Andri','2018-01-02','2000'),
     new Employee(2,'zz','2018-01-02','2000'),
   ];
-  
+
+ 
+  idemp = '';
+  nameemp ='';
+  dateborn='';
+  salaryemp ='';
+
   addEmployee(employeeID: number  , employeeName: string, employeeDob: string,employeeSalary : string){
     let objIndex = this.findbyId(employeeID);
     if(objIndex == -1){
@@ -18,7 +26,7 @@ export class EmployeeComponent {
     }else{
       this.employee[objIndex].name = employeeName;
       this.employee[objIndex].date_born = employeeDob;
-      this.employee[objIndex].date_born = employeeSalary;
+      this.employee[objIndex].salary = employeeSalary;
     }   
     console.log(employeeID,employeeName,employeeDob,employeeSalary);
   }
@@ -28,9 +36,13 @@ export class EmployeeComponent {
     this.employee.splice(objIndex, 1);
   }
 
-  editEmpp(id){
-    let objIndex = this.findbyId(id);
-    this.employee[objIndex].name = "Laila";
+  editEmpp(id,name,date_born,salary){
+    // let objIndex = this.findbyId(id);
+    // this.employee[objIndex].name = "Laila";
+    this.idemp= id;
+    this.nameemp = name;
+    this.dateborn = date_born;
+    this.salaryemp = salary;
   }
 
   findbyId(id){
